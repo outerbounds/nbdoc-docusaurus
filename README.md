@@ -4,9 +4,9 @@
 
 - [Background](#background)
 - [Getting Started](#getting-started)
-    - [Fork this repo](#fork-this-repo)
-    - [`settings.ini`](#settingsini)
-    - [Installation](#installation)
+    - [1. Fork this repo](#1-fork-this-repo)
+    - [2. Edit `settings.ini`](#2-edit-settingsini)
+    - [3. Install Dependencies](#3-install-dependencies)
 - [Using Notebooks](#using-notebooks)
     - [Notebook Development Setup](#notebook-development-setup)
     - [Tutorial](#tutorial)
@@ -41,18 +41,18 @@ This repo provides an example of how to create blog posts and/or documentation w
 
 This project assumes some familiarity with static site generators.  It is also very helpful to gain some familiarity with [Docusaurus](https://docusaurus.io/) and it's general features.
 
-<a id="markdown-fork-this-repo" name="fork-this-repo"></a>
+<a id="markdown-1-fork-this-repo" name="1-fork-this-repo"></a>
 
-### Fork this repo
+### 1. Fork this repo
 
 To create your own blog or docs site, you can start by forking this repo, or creating a new repo by using this one as a [repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
 
 This repo has both blog and docs, but you might want to enable [blog only mode](https://docusaurus.io/docs/blog#blog-only-mode) or [docs only mode](https://docusaurus.io/docs/docs-introduction#docs-only-mode)
 
 
-<a id="markdown-settingsini" name="settingsini"></a>
+<a id="markdown-2-edit-settingsini" name="2-edit-settingsini"></a>
 
-### `settings.ini`
+### 2. Edit `settings.ini`
 
 After that, you should change the follwing lines in the [settings.ini](settings.ini) file.  The keys are described below:
 
@@ -79,9 +79,9 @@ The definintions of these fields are as follows:
 - **`doc_baseurl`:** the path on your domain that has the docs.  This is usually the root `/` so doesn't normally need to be changed.
 - **`module_baseurl`:** This is optional for a situations where you want to document python apis.  This allows documentation to include links to source code.
 
-<a id="markdown-installation" name="installation"></a>
+<a id="markdown-3-install-dependencies" name="3-install-dependencies"></a>
 
-### Installation
+### 3. Install Dependencies
 
 1. Before you get started, you need to make sure you have [node and npm installed](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm). 
 
@@ -104,7 +104,7 @@ Note that this references `requirements.txt`, which you will have to update appr
 
 ### Notebook Development Setup
 
-1. Then you need to open 3 different terminal windows (I recommend using split panes), and run the following commands in three seperate windows:
+1. You need to open 3 different terminal windows (I recommend using split panes), and run the following commands in three seperate windows:
 
     _Note: we tried to use docker-compose but had trouble getting some things to run on Apple Silicon, so this will have to do for now._
 
@@ -133,7 +133,7 @@ Note that this references `requirements.txt`, which you will have to update appr
 
 ### Tutorial
 
-To go through the tutorial, open the [rendered authoring guide](http://localhost:3000/docs/nb) in one window, and the notebook [docs/99-nb.ipynb](docs/99-nb.ipynb) in another window.  Study the notebook cells and the corresponding rendered page carefully.  You will see many options for:
+To go through the tutorial, open the [rendered authoring guide](http://localhost:3000/docs/nb) in one window, and the notebook [docs/nb.ipynb](docs/nb.ipynb) in another window.  Study the notebook cells and the corresponding rendered page carefully.  You will see many options for:
 
 - How to deal with scripts vs interactive code cells
 - How to run bash commands / scripts
