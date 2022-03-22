@@ -65,7 +65,7 @@ tst_flags = notest
 +doc_host = https://<your github user name>.github.io or your custom domain
 doc_baseurl = /
 -module_baseurls = metaflow=https://github.com/Netflix/metaflow/tree/master/
-+module_baseurls = <your python module>=https://github.com/Netflix/metaflow/tree/master/
++module_baseurls = <your python module>=https://github.com/a/path/tree/master/
 ```
 
 The definintions of these fields are as follows:
