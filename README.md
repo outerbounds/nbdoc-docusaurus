@@ -16,7 +16,6 @@
         - [Ignoring Skip Flags](#ignoring-skip-flags)
     - [Hotkeys For Jupyter](#hotkeys-for-jupyter)
 - [Using Markdown](#using-markdown)
-    - [Easy changes in the browser](#easy-changes-in-the-browser)
 - [Running the documentation locally](#running-the-documentation-locally)
 - [Automatic publishing](#automatic-publishing)
 - [About](#about)
@@ -209,15 +208,6 @@ After you complete the tutorial, you should run through this list and make sure 
 
 > You do not have to use notebooks to update documentation.  You can use markdown as you would normally do with Docusaurus.  This is a good option when there isn't much code in the document you are trying to write.
 
-<a id="markdown-easy-changes-in-the-browser" name="easy-changes-in-the-browser"></a>
-
-### Easy changes in the browser
-
-> <img width="174" alt="Screen Shot 2022-03-08 at 12 17 00 PM" src="https://user-images.githubusercontent.com/93726128/157309404-2bf342ff-8149-4155-9ec2-9ae9d6cb9301.png">
-
-> Navigate to the page that you want to edit and click on `Edit this Page` which appears at the bottom of the content. An in-browser IDE will appear in your browser where you can edit the `.md` file. Then push those changes to a new branch and create a pull request. 
-
-> See [Using github in VSCode](https://code.visualstudio.com/docs/editor/github) for more information on how to create branches in the IDE.
 
 <a id="markdown-running-the-documentation-locally" name="running-the-documentation-locally"></a>
 
@@ -228,7 +218,7 @@ After you complete the tutorial, you should run through this list and make sure 
 * `make install`
 * `make docs`
 
-> Any saved changes that you make to the `.md` files in the `docs` directory will automatically be reflected at [the local preview page](http://localhost:3000/docs/).
+> Any saved changes that you make to the `.md` files in the `docs` or `blogs` directory will automatically be reflected at [the local preview page](http://localhost:3000/).
 
 
 <a id="markdown-automatic-publishing" name="automatic-publishing"></a>
