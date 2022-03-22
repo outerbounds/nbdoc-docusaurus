@@ -39,6 +39,8 @@ This repo provides an example of how to create blog posts and/or documentation w
 
 ## Getting Started
 
+This project assumes some familiarity with static site generators.  It is also very helpful to gain some familiarity with [Docusaurus](https://docusaurus.io/) and it's general features.
+
 <a id="markdown-fork-this-repo" name="fork-this-repo"></a>
 
 ### Fork this repo
@@ -46,6 +48,7 @@ This repo provides an example of how to create blog posts and/or documentation w
 To create your own blog or docs site, you can start by forking this repo, or creating a new repo by using this one as a [repository template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-template-repository).
 
 This repo has both blog and docs, but you might want to enable [blog only mode](https://docusaurus.io/docs/blog#blog-only-mode) or [docs only mode](https://docusaurus.io/docs/docs-introduction#docs-only-mode)
+
 
 <a id="markdown-settingsini" name="settingsini"></a>
 
