@@ -69,6 +69,7 @@ doc_baseurl = /
 ```
 
 The definintions of these fields are as follows:
+
 - **`nbs_path`:** the top most in your directory that contains notebooks to be converted to markdown files.  The default value for this `.`, which just means the root of the repo.
 - **`recursive`:** set to `True` if you want to recurisvely find all notebooks under `nbs_path`, and `False` otherwise.  Defaults to `True`
 - **`tst_flags`:** special cell comment that will allow yout skip cell execution and test.  For example, adding the comment `#notest` in a code cell would result skip cell execution for that cell.  You can add mulitple values in this field seperated by a pipe `|`
