@@ -1,0 +1,21 @@
+{
+  "unversionedId": "nb",
+  "id": "nb",
+  "title": "Authoring Docs With Notebooks",
+  "description": "nbdoc is a lightweight version of nbdev that allows you to create rich, testable content with notebooks.  Docusarus is a beautiful static site generator for code documentation and blogging.  This project brings all of these together to give you a powerful documentation system.",
+  "source": "@site/docs/nb.md",
+  "sourceDirName": ".",
+  "slug": "/nb",
+  "permalink": "/docs/nb",
+  "editUrl": "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/docs/nb.md",
+  "tags": [],
+  "version": "current",
+  "frontMatter": {
+    "title": "Authoring Docs With Notebooks"
+  },
+  "sidebar": "tutorialSidebar",
+  "previous": {
+    "title": "Translate your site",
+    "permalink": "/docs/tutorial-extras/translate-your-site"
+  }
+}
