@@ -2,6 +2,8 @@
 
 > Never copy and paste code into documentation again!
 
+👉 [See a live example](https://outerbounds.github.io/nbdoc-docusaurus/docs/nb)
+
 <a id="markdown-background" name="background"></a>
 
 ## Background
