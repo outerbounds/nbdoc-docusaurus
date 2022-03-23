@@ -6,15 +6,15 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
-  url: 'https://your-docusaurus-test-site.com',
-  baseUrl: '/',
+  title: 'nbdoc: A Better Way to Write Technical Docs With Notebooks.',
+  tagline: 'Stop copy & pasting code into docs',
+  url: 'https://outerbounds.github.io',
+  baseUrl: '/nbdoc-docusaurus/',
   onBrokenLinks: 'throw',
   onBrokenMarkdownLinks: 'warn',
   favicon: 'img/favicon.ico',
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'outerbounds', // Usually your GitHub org/user name.
+  projectName: 'nbdoc-docusaurus', // Usually your repo name.
 
   presets: [
     [
