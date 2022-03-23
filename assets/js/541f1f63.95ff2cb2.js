@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[618],{1059:function(o){o.exports=JSON.parse('{"allTagsPath":"/nbdoc-docusaurus/blog/tags","slug":"/nbdoc-docusaurus/blog/tags/notebooks","name":"notebooks","count":1,"permalink":"/nbdoc-docusaurus/blog/tags/notebooks"}')}}]);
