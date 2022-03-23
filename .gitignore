@@ -8,6 +8,9 @@
 docs/run_id.txt
 *.py
 *.txt
+.ipynb_checkpoints/*
+docs/.ipynb_checkpoints/
+blog/.ipynb_checkpoints/
 
 # Generated files
 .docusaurus

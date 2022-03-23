@@ -6,8 +6,8 @@ const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'nbdoc: A Better Way to Write Technical Docs With Notebooks.',
-  tagline: 'Stop copy & pasting code into docs',
+  title: 'nbdoc: Authoring With Notebooks',
+  tagline: 'Stop copy/pasting code into docs & blogs',
   url: 'https://outerbounds.github.io',
   baseUrl: '/nbdoc-docusaurus/',
   onBrokenLinks: 'throw',

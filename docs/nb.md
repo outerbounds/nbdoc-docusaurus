@@ -11,6 +11,7 @@ title: Authoring Docs With Notebooks
 
 ## Setup
 
+1. Follow the [Getting Started guide in the README](https://github.com/outerbounds/nbdoc-docusaurus#getting-started) to get everything setup.
 
 1. First, create an isolated python environment using your favorite tool such as `conda`, `pipenv`, `poetry` etc.  Then, from the root of this repo run this command in the terminal:
 

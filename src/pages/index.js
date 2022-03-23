@@ -16,8 +16,8 @@ function HomepageHeader() {
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Docusaurus Tutorial - 5min ⏱️
+            to="/docs/nb">
+            nbdoc Tutorial - 5min ⏱️
           </Link>
         </div>
       </div>
@@ -29,11 +29,13 @@ export default function Home() {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
-      title={`Hello from ${siteConfig.title}`}
-      description="Description will go into a meta tag in <head />">
+      title={`${siteConfig.title}`}
+      description="A better way to author technical docs and blogs.">
       <HomepageHeader />
       <main>
-        <HomepageFeatures />
+      <center>
+      <img width="949" alt="nbdoc4" src="https://user-images.githubusercontent.com/1483922/159776255-3eb05cd5-4d48-48c4-80e7-7825839da0ef.png"></img>
+      </center>
       </main>
     </Layout>
   );

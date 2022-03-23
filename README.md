@@ -68,7 +68,8 @@ tst_flags = notest
 +user = <your github username>
 -doc_host = https://outerbounds.github.io
 +doc_host = https://<your github user name>.github.io or your custom domain
-doc_baseurl = /
+-doc_baseurl = /nbdoc-docusaurus
++doc_baseurl = /<name of your repo> or path
 -module_baseurls = metaflow=https://github.com/Netflix/metaflow/tree/master/
 +module_baseurls = <your python module>=https://github.com/a/path/tree/master/
 ```
