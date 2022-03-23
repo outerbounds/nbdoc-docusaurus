@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunkdocs=self.webpackChunkdocs||[]).push([[728],{9472:function(s){s.exports=JSON.parse('{"allTagsPath":"/nbdoc-docusaurus/blog/tags","slug":"/nbdoc-docusaurus/blog/tags/hola","name":"hola","count":1,"permalink":"/nbdoc-docusaurus/blog/tags/hola"}')}}]);
