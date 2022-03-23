@@ -1,5 +1,6 @@
 ---
 title: Authoring Docs With Notebooks
+sidebar_position: 1
 ---
 
 
