@@ -110,131 +110,42 @@ If you use the `%%writefile` magic, the magic command will get stripped from the
 This is what the cell input looks like:
 
 ```python
-%%writefile myflow.py
-from metaflow import FlowSpec, step
+%%writefile myscript.py
 
-
-class MyFlow(FlowSpec):
-    @step
-    def start(self):
-        self.some_data = ["some", "data"]
-        self.next(self.middle)
-
-    @step
-    def middle(self):
-        self.next(self.end)
-
-    @step
-    def end(self):
-        pass
-
+class MyClass:
+    @classmethod
+    def run(cls):
+        return "hello world"
 
 if __name__ == "__main__":
-    MyFlow()
+    print(MyClass.run())
 ```
 
 The output is then rendered like this:
 
 
-```py title="myflow.py"
-from metaflow import FlowSpec, step
-
-
-class MyFlow(FlowSpec):
-    @step
-    def start(self):
-        self.some_data = ["some", "data"]
-        self.next(self.middle)
-
-    @step
-    def middle(self):
-        self.next(self.end)
-
-    @step
-    def end(self):
-        pass
-
+```py title="myscript.py"
+class MyClass:
+    @classmethod
+    def run(cls):
+        return "hello world"
 
 if __name__ == "__main__":
-    MyFlow()
+    print(MyClass.run())
 ```
 
 ### Running shell commands
 
-You can use the `!` magic to run shell commands.  When you do this, the cell is marked with the appropriate language automatically.  For Metaflow output, the preamble of the logs are automatically removed.
-
-You may wish to only show logs from particular steps when executing a Flow.  You can accomplish this by using the `#cell_meta:show_steps=<step_name>` comment:
-
-You can show multiple steps by seperating step names with commas:
-
-### Writing Interactive Code & Toggling Visibility
-
-It can be useful to write interactive code in notebooks as well.  If you want to interact with a Flow, we recommend using the `--run-id-file <filemame>` flag.
-
-Note we are hiding both the input and output of the below cell (because it is a bit repetitive in this case) with the `#cell_meta:tag=remove_cell` comment:
+You can use the `!` magic to run shell commands.  When you do this, the cell is marked with the appropriate language automatically.
 
 
 ```bash
-python myflow.py run
+python myscript.py
 ```
 
 <CodeOutputBlock lang="bash">
 
-     Workflow starting (run-id 1647979602062769):
-     [1647979602062769/start/1 (pid 60096)] Task is starting.
-     [1647979602062769/start/1 (pid 60096)] Task finished successfully.
-     [1647979602062769/middle/2 (pid 60099)] Task is starting.
-     [1647979602062769/middle/2 (pid 60099)] Task finished successfully.
-     [1647979602062769/end/3 (pid 60103)] Task is starting.
-     [1647979602062769/end/3 (pid 60103)] Task finished successfully.
-     Done!
-
-
-</CodeOutputBlock>
-
-Notice how parts of the above output are automatically pruned for the docs.  You can also choose to only show certain steps from your Flow with the `meta:show_steps=<step1_name>,<step2_name>` comment:
-
-The cell input looks like this.  Note that the comment is stripped out and only the "middle" step is showing
-
-```python
-#meta:show_steps=middle
-!python myflow.py run --run-id-file run_id.txt
-```
-
-
-```bash
-python myflow.py run --run-id-file run_id.txt
-```
-
-<CodeOutputBlock lang="bash">
-
-     [1647980445728255/middle/2 (pid 60283)] Task is starting.
-     [1647980445728255/middle/2 (pid 60283)] Task finished successfully.
-    ...
-
-</CodeOutputBlock>
-
-You will see all of the output in the notebook, but in the docs, only the `middle` step will show!
-
-Furthermore, you can write and run your code as normal and this will show up in the docs:
-
-
-```python
-run_id = !cat run_id.txt
-from metaflow import Run
-
-run = Run(f"MyFlow/{run_id[0]}")
-
-run.data.some_data
-```
-
-<CodeOutputBlock lang="python">
-
-
-
-
-    ['some', 'data']
-
+    hello world
 
 
 </CodeOutputBlock>
@@ -243,8 +154,8 @@ It is often smart to run tests in your docs.  To do this, simply add assert stat
 
 
 ```python
-assert run.data.some_data == ["some", "data"]
-assert run.successful
+result = !python myscript.py
+assert result == ["hello world"]
 ```
 
 But what if you only want to show the cell input, but not the output.  Perhaps the output is too long and not necesary.  You can do this with the `#meta:tag=hide_output` comment:
@@ -280,84 +191,6 @@ If you want to skip certain cells from running in tests because they take a real
 ```python
 assert 1 == 1
 ```
-
-## API Docs
-
-You can compose API docs in notebooks by using `nbdoc.show_doc.ShowDoc`, for example let's see what the API docs for `FlowSpec` looks like:
-
-
-```python
-from nbdoc.showdoc import ShowDoc
-from metaflow import FlowSpec, conda
-```
-
-
-<DocSection type="class" name="FlowSpec" module="metaflow.flowspec" heading_level="3" link="https://github.com/Netflix/metaflow/tree/master/metaflow/flowspec.py#L48">
-<SigArgSection>
-<SigArg name="use_cli" default="True" />
-</SigArgSection>
-<Description summary="Main class from which all Flows should inherit." />
-<ParamSection name="Attributes">
-	<Parameter name="script_name" />
-	<Parameter name="index" />
-	<Parameter name="input" />
-</ParamSection>
-</DocSection>
-
-
-Even though the API docs will render in the notebook, they will be restyled in the docs.  We render it in the notebook so you can have some visual correspendence to what is being rendered in the docs.
-
-Sometimes, you may want to override what the API docs show because of tricky python objects like decorators.  For example, this is how you would document the conda step decorator:
-
-
-```python
-from metaflow.plugins import CondaStepDecorator
-```
-
-If you try to just call `ShowDoc` on `CondaStepDecorator` it will inspect the class as is, which is not ideal:
-
-
-<DocSection type="class" name="CondaStepDecorator" module="metaflow.plugins.conda.conda_step_decorator" heading_level="3" link="https://github.com/Netflix/metaflow/tree/master/metaflow/plugins/conda/conda_step_decorator.py#L37">
-<SigArgSection>
-<SigArg name="attributes" default="None" /><SigArg name="statically_defined" default="False" />
-</SigArgSection>
-<Description summary="Conda decorator that sets the Conda environment for your step" extended_summary="To use, add this decorator to your step:\n```\n@conda\n@step\ndef MyStep(self):\n    ...\n```\n\nInformation in this decorator will override any eventual @conda_base flow level decorator.\nParameters\n----------\nlibraries : Dict\n    Libraries to use for this flow. The key is the name of the package and the value\n    is the version to use. Defaults to {}\npython : string\n    Version of Python to use (for example: '3.7.4'). Defaults to None\n    (will use the current python version)\ndisabled : bool\n    If set to True, disables Conda. Defaults to False" />
-<ParamSection name="Attributes">
-	<Parameter name="conda" />
-	<Parameter name="environments" />
-</ParamSection>
-</DocSection>
-
-
-Therefore, you can use the arguments `name` and `decorator` to set the right behavior.  (Setting `decorator=True` is the equivalent of setting `objtype='decorator'`):
-
-
-<DocSection type="decorator" name="@conda" module="metaflow.plugins.conda.conda_step_decorator" heading_level="3" link="https://github.com/Netflix/metaflow/tree/master/metaflow/plugins/conda/conda_step_decorator.py#L37">
-<SigArgSection>
-<SigArg name="..." />
-</SigArgSection>
-<Description summary="Conda decorator that sets the Conda environment for your step" extended_summary="To use, add this decorator to your step:\n```\n@conda\n@step\ndef MyStep(self):\n    ...\n```\n\nInformation in this decorator will override any eventual @conda_base flow level decorator.\nParameters\n----------\nlibraries : Dict\n    Libraries to use for this flow. The key is the name of the package and the value\n    is the version to use. Defaults to {}\npython : string\n    Version of Python to use (for example: '3.7.4'). Defaults to None\n    (will use the current python version)\ndisabled : bool\n    If set to True, disables Conda. Defaults to False" />
-<ParamSection name="Attributes">
-	<Parameter name="conda" />
-	<Parameter name="environments" />
-</ParamSection>
-</DocSection>
-
-
-For metaflow, there is special magic built-in, so we don't need to do anything manually for decorators:
-
-
-<DocSection type="decorator" name="@conda" module="metaflow.plugins.conda.conda_step_decorator" heading_level="3" link="https://github.com/Netflix/metaflow/tree/master/metaflow/plugins/conda/conda_step_decorator.py#L37">
-<SigArgSection>
-<SigArg name="..." />
-</SigArgSection>
-<Description summary="Conda decorator that sets the Conda environment for your step" extended_summary="To use, add this decorator to your step:\n```\n@conda\n@step\ndef MyStep(self):\n    ...\n```\n\nInformation in this decorator will override any eventual @conda_base flow level decorator.\nParameters\n----------\nlibraries : Dict\n    Libraries to use for this flow. The key is the name of the package and the value\n    is the version to use. Defaults to {}\npython : string\n    Version of Python to use (for example: '3.7.4'). Defaults to None\n    (will use the current python version)\ndisabled : bool\n    If set to True, disables Conda. Defaults to False" />
-<ParamSection name="Attributes">
-	<Parameter name="conda" />
-	<Parameter name="environments" />
-</ParamSection>
-</DocSection>
-
 
 ## Formatting code with black
 
@@ -507,7 +340,7 @@ plt.show()
 
 
     
-![png](_nb_files/output_55_0.png)
+![png](_nb_files/output_33_0.png)
     
 
 
@@ -538,13 +371,13 @@ alt.Chart(source).mark_circle(size=60).encode(
 
 
 ```html
-<div id="altair-viz-b9245679d96944cca26f641ceee559d1"></div>
+<div id="altair-viz-d5be0e1c312f460692dffccbd070b474"></div>
 <script type="text/javascript">
   var VEGA_DEBUG = (typeof VEGA_DEBUG == "undefined") ? {} : VEGA_DEBUG;
   (function(spec, embedOpt){
     let outputDiv = document.currentScript.previousElementSibling;
-    if (outputDiv.id !== "altair-viz-b9245679d96944cca26f641ceee559d1") {
-      outputDiv = document.getElementById("altair-viz-b9245679d96944cca26f641ceee559d1");
+    if (outputDiv.id !== "altair-viz-d5be0e1c312f460692dffccbd070b474") {
+      outputDiv = document.getElementById("altair-viz-d5be0e1c312f460692dffccbd070b474");
     }
     const paths = {
       "vega": "https://cdn.jsdelivr.net/npm//vega@5?noext",
@@ -638,7 +471,7 @@ alt.Chart(source).mark_circle(size=60).encode(
 
 
     
-![svg](_nb_files/output_60_0.svg)
+![svg](_nb_files/output_38_0.svg)
     
 
 

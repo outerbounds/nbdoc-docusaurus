@@ -51,7 +51,7 @@ const config = {
         items: [
           {
             type: 'doc',
-            docId: 'intro',
+            docId: 'nb',
             position: 'left',
             label: 'Tutorial',
           },
@@ -102,7 +102,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Outerbounds, Inc. Built with Docusaurus & nbdoc.`,
       },
       prism: {
         theme: lightCodeTheme,
