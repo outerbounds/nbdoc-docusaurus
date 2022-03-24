@@ -11,6 +11,7 @@ docs/run_id.txt
 .ipynb_checkpoints/*
 docs/.ipynb_checkpoints/
 blog/.ipynb_checkpoints/
+.ipynb_checkpoints/
 
 # Generated files
 .docusaurus
