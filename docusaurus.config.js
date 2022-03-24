@@ -71,7 +71,7 @@ const config = {
             items: [
               {
                 label: 'Tutorial',
-                to: '/docs/Docusaurus/intro',
+                to: '/docs/nb',
               },
             ],
           },
