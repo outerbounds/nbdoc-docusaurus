@@ -42,7 +42,12 @@ export default function Home() {
       <p><font size="+1">Leverages <a href="https://docusaurus.io/">Docusaurus</a>, a popular static site generator built specifically for documentation.</font></p>
       <br></br>
       <br></br>
+      <figure>
       <img width="949" alt="nbdoc4" src="https://user-images.githubusercontent.com/1483922/159776255-3eb05cd5-4d48-48c4-80e7-7825839da0ef.png"></img>
+      <figcaption><font size="+1"><p>nbdoc is powered by <a href="https://github.com/fastai/nbdev">nbdev</a>, a literate programming system.</p></font>
+</figcaption>
+      </figure>
+      <br></br>
       <h1>A Whirlwind Tour</h1>
       <h2>Hello World</h2>
       <iframe width="560" height="315" src="https://www.youtube.com/embed/zclB89-exZ4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
