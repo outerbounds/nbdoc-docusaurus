@@ -41,7 +41,9 @@ const config = {
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
+    
     ({
+      image: 'img/nbdoc_diagram.png',
       navbar: {
         title: 'nbdoc-Docusaurus',
         logo: {
