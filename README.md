@@ -243,4 +243,4 @@ After you complete the tutorial, you should run through this list and make sure 
 
 ## About
 
-We use [nbdoc](https://github.com/outerbounds/nbdoc) as a notebook converter and testing utility, as well as [docusaurus](https://github.com/facebook/docusaurus) for the static site generator.
+We use [nbdoc](https://github.com/outerbounds/nbdoc) as a notebook converter and testing utility, as well as [docusaurus](https://github.com/facebook/docusaurus) for the static site generator.  This technology is built using [nbdev](https://github.com/fastai/nbdev), a literate programming system.
