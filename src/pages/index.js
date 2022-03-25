@@ -38,7 +38,7 @@ export default function Home() {
       <p><font size="+1"><strong>Is fully testable</strong> with unit tests</font></p>
       <p><font size="+1"><strong>Doesn't require copy & pasting code</strong> into markdown files.</font></p>
       <p><font size="+1"><strong>Can automatically update</strong> by programatically running the code in your docs.</font></p>
-      <p><font size="+1">Allows you to author docs <strong>using a WSIWYG style editor</strong>.</font></p>
+      <p><font size="+1">Allows you to author docs <strong>using a WYSIWYG style editor</strong>.</font></p>
       <p><font size="+1">Leverages <a href="https://docusaurus.io/">Docusaurus</a>, a popular static site generator built specifically for documentation.</font></p>
       <br></br>
       <br></br>
