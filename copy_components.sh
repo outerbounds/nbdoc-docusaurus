@@ -9,3 +9,4 @@ cp ../docs/yarn.lock .
 cp ../docs/package.json .
 cp -r ../docs/requirements.txt .
 cp -r ../docs/docs/nb.ipynb docs/
+cp ../docs/Makefile .
